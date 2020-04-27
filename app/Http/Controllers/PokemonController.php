@@ -41,12 +41,23 @@ class PokemonController extends Controller
 		$img = $response->sprites->front_default;
 		$height = $response->height / 10;
 		$weight = $response->weight / 10;
+		$speed = $response->stats[0]->base_stat;
+		$special_defense = $response->stats[1]->base_stat;
+		$special_attack = $response->stats[2]->base_stat;
+		$defense = $response->stats[3]->base_stat;
+		$attack = $response->stats[4]->base_stat;
+		$hp = $response->stats[5]->base_stat;
 		$types = [];
+		$abilities = [];
 
 		foreach ($response->types as $key => $value) {
 			$types[$key] = $value->type->name;
 		}
 
-		return view('pokemon', compact('response', 'id', 'name', 'img', 'height', 'weight', 'types'));
+		foreach ($response->abilities as $key => $value) {
+			$abilities[$key] = $value->ability->name;
+		}
+
+		return view('pokemon', compact('id', 'name', 'img', 'height', 'weight', 'types', 'abilities', 'speed', 'special_defense', 'special_attack', 'defense', 'attack', 'hp'));
 	}
 }

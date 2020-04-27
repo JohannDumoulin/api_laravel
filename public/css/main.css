@@ -153,13 +153,21 @@ body[data-page=pokemons] section #pokemon_list {
   width: 900px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin: 0 auto;
 }
 
-body[data-page=pokemons] section #pokemon_list .pokemon_content {
-  width: 250px;
-  height: 250px;
+body[data-page=pokemons] section #pokemon_list > a {
+  margin-right: 100px;
+}
+
+body[data-page=pokemons] section #pokemon_list > a:nth-child(3n+3) {
+  margin-right: 0px;
+}
+
+body[data-page=pokemons] section #pokemon_list > a .pokemon_content {
+  width: 150px;
+  height: 150px;
   border: 2px solid black;
   margin-bottom: 40px;
   cursor: pointer;
@@ -170,11 +178,11 @@ body[data-page=pokemons] section #pokemon_list .pokemon_content {
   align-items: center;
 }
 
-body[data-page=pokemons] section #pokemon_list .pokemon_content img {
+body[data-page=pokemons] section #pokemon_list > a .pokemon_content img {
   width: 80%;
 }
 
-body[data-page=pokemons] section #pokemon_list .pokemon_content p {
+body[data-page=pokemons] section #pokemon_list > a .pokemon_content p {
   text-align: center;
   font-size: 18px;
 }

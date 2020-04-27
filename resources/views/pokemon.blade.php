@@ -40,10 +40,29 @@
                         </p>
                     </div>
                 </div>
+                <p>
+                    @if (count($abilities) <= 1)
+                        Ability :
+                    @else
+                        Abilities :
+                    @endif
+                     
+                    @foreach ($abilities as $ability)
+                        @if ($ability == last($abilities))
+                            {{ $ability }}
+                        @else
+                            {{ $ability }},
+                        @endif
+                    @endforeach
+                </p>
+                <p>Speed : {{ $speed }}</p>
+                <p>Special-defense : {{ $special_defense }}</p>
+                <p>Special-attack : {{ $special_attack }}</p>
+                <p>Defense : {{ $defense }}</p>
+                <p>Attack : {{ $attack }}</p>
+                <p>Hp : {{ $hp }}</p>
             </div>
         </section>
-
-        <p>{{ dd($response) }}</p>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>

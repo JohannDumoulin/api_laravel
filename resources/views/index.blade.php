@@ -15,18 +15,10 @@
     </head>
     <body data-page="index">
         <section>
-            <a href="/pokemons/page/1">
-                <p>Pokemons</p>
-            </a>
-            <a href="">
-                <p>Moves</p>
-            </a>
-            <a href="/items/page/1">
-                <p>Items</p>
-            </a>
-            <a href="">
-                <p>Berries</p>
-            </a>
+            <a href="/pokemons/page/1">Pokemons</a>
+            <a href="/items/page/1">Items</a>
+
+            <a href="../../create-pokemon">Create your pokemon !</a>
         </section>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

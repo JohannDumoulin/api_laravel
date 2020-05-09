@@ -15,14 +15,19 @@
     </head>
     <body data-page="pokemon">
         <section>
+            <div id="pokemon_id">
+                <p>#{{ $id }}</p>
+                <p>#{{ $id }}</p>
+            </div>
+
             <div id="container">
                 <div id="desc_head">
                     <img src="{{ $img }}" alt="Image of {{ $name }}">
                     <div id="desc_head_content">
                         <h1>{{ $name }}</h1>
-                        <p>#{{ $id }}</p>
-                        <p>Height : {{ $height }} m</p>
-                        <p>Weight : {{ $weight }} kg</p>
+                        
+                        <p>Height : <span class="bold">{{ $height }} m</span></p>
+                        <p>Weight : <span class="bold">{{ $weight }} kg</span></p>
                         <p>
                             @if (count($types) <= 1)
                                 Type :
@@ -32,35 +37,46 @@
                              
                             @foreach ($types as $type)
                                 @if ($type == last($types))
-                                    {{ $type }}
+                                    <span class="bold">{{ $type }}</span>
                                 @else
-                                    {{ $type }},
+                                    <span class="bold">{{ $type }}</span>,
                                 @endif
                             @endforeach
                         </p>
                     </div>
                 </div>
-                <p>
-                    @if (count($abilities) <= 1)
-                        Ability :
-                    @else
-                        Abilities :
-                    @endif
-                     
-                    @foreach ($abilities as $ability)
-                        @if ($ability == last($abilities))
-                            {{ $ability }}
-                        @else
-                            {{ $ability }},
-                        @endif
-                    @endforeach
-                </p>
-                <p>Speed : {{ $speed }}</p>
-                <p>Special-defense : {{ $special_defense }}</p>
-                <p>Special-attack : {{ $special_attack }}</p>
-                <p>Defense : {{ $defense }}</p>
-                <p>Attack : {{ $attack }}</p>
-                <p>Hp : {{ $hp }}</p>
+
+                <div id="content">
+                    <div id="abilities">
+                        <h2>
+                            @if (count($abilities) <= 1)
+                                Ability :
+                            @else
+                                Abilities :
+                            @endif
+                        </h2>
+                    
+                            @foreach ($abilities as $ability)
+                                <p>- {{ $ability }}</p>
+                            @endforeach
+                        
+                    </div>
+
+                    <div id="stats">
+                        <h2>Stats :</h2>
+                        <p>Speed : <span class="bold">{{ $speed }}</span></p>
+                        <p>Special-defense : <span class="bold">{{ $special_defense }}</span></p>
+                        <p>Special-attack : <span class="bold">{{ $special_attack }}</span></p>
+                        <p>Defense : <span class="bold">{{ $defense }}</span></p>
+                        <p>Attack : <span class="bold">{{ $attack }}</span></p>
+                        <p>Hp : <span class="bold">{{ $hp }}</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="go_back">
+                <a href="{{ url()->previous() }}">Return</a>
+                <img src="{{ asset('img/arrow_back.svg') }}" alt="">
             </div>
         </section>
 

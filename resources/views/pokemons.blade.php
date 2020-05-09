@@ -15,7 +15,17 @@
     </head>
     <body data-page="pokemons">
         <section>
-            <p><a href="../../">Home</a></p>
+            <div id="go_back">
+                <a href="../../../">Home</a>
+                <img src="{{ asset('img/arrow_back.svg') }}" alt="">
+            </div>
+
+            <h1>List of all pokemons</h1>
+            <form action="">
+                <p>Search a specific pokemon :</p>
+                <input type="search" placeholder="Ex : Pikachu">
+                <input type="submit" value="Search">
+            </form>            
             <div id="pokemon_list">
                 @foreach ($pokemon_list as $pokemon)
                     <a href="/pokemon/{{ $pokemon['name'] }}"><div class="pokemon_content">

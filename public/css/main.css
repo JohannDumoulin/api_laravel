@@ -137,7 +137,8 @@ table {
 
 body {
   font-family: "Oxanium", cursive;
-  font-weight: 700;
+  font-weight: 500;
+  position: relative;
 }
 
 a {
@@ -145,8 +146,79 @@ a {
   text-decoration: none;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 body[data-page=pokemons] section {
   padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body[data-page=pokemons] section #go_back {
+  position: absolute;
+  left: 150px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+}
+
+body[data-page=pokemons] section #go_back a {
+  padding-bottom: 45px;
+}
+
+body[data-page=pokemons] section #go_back img {
+  width: 30px;
+  transform: rotate(180deg);
+  margin-top: -35px;
+  z-index: -1;
+}
+
+body[data-page=pokemons] section h1 {
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+body[data-page=pokemons] section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body[data-page=pokemons] section form p {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+body[data-page=pokemons] section form input {
+  border: none;
+  font-family: "Oxanium", cursive;
+}
+
+body[data-page=pokemons] section form input[type=search] {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 200px;
+  padding: 20px 20px;
+  outline: none;
+  height: 25px;
+  font-size: 20px;
+}
+
+body[data-page=pokemons] section form input[type=submit] {
+  margin: 25px 0;
+  width: 125px;
+  border: 1px solid black;
+  font-family: "Oxanium", cursive;
+  background-color: white;
+  outline: none;
+  padding: 10px 0;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 body[data-page=pokemons] section #pokemon_list {
@@ -154,7 +226,7 @@ body[data-page=pokemons] section #pokemon_list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 auto;
+  margin: 50px auto 0 auto;
 }
 
 body[data-page=pokemons] section #pokemon_list > a {
@@ -168,7 +240,7 @@ body[data-page=pokemons] section #pokemon_list > a:nth-child(3n+3) {
 body[data-page=pokemons] section #pokemon_list > a .pokemon_content {
   width: 150px;
   height: 150px;
-  border: 2px solid black;
+  border: 1.5px solid black;
   margin-bottom: 40px;
   cursor: pointer;
   border-radius: 30px;
@@ -201,11 +273,50 @@ body[data-page=pokemons] section #buttons .button {
   border-radius: 30px;
 }
 
+body[data-page=pokemon] {
+  overflow: hidden;
+}
+
+body[data-page=pokemon] section #pokemon_id {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(10px) translateY(-30px);
+  z-index: -1;
+}
+
+body[data-page=pokemon] section #pokemon_id p {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: 800;
+  font-size: 300px;
+}
+
+body[data-page=pokemon] section #pokemon_id p:nth-of-type(1) {
+  -webkit-text-stroke: 2px #E80D0C;
+  z-index: 10;
+  color: white;
+  transform: translateX(5px) translateY(5px);
+}
+
+body[data-page=pokemon] section #pokemon_id p:nth-of-type(2) {
+  color: #E80D0C;
+  z-index: 5;
+}
+
 body[data-page=pokemon] section #container {
-  width: 70%;
-  margin: 0 auto;
-  padding: 50px 50px;
-  border: 1px solid black;
+  margin: 0 150px;
+  padding-top: 170px;
+}
+
+body[data-page=pokemon] section #container p {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+body[data-page=pokemon] section #container p:last-of-type {
+  margin-bottom: 0;
 }
 
 body[data-page=pokemon] section #container #desc_head {
@@ -218,12 +329,52 @@ body[data-page=pokemon] section #container #desc_head > img {
 }
 
 body[data-page=pokemon] section #container #desc_head #desc_head_content {
-  margin-left: 50px;
+  margin-top: 20px;
+  margin-left: 80px;
+  font-size: 25px;
 }
 
 body[data-page=pokemon] section #container #desc_head #desc_head_content h1 {
-  font-size: 40px;
+  font-size: 50px;
   margin-bottom: 20px;
+  font-weight: 700;
+}
+
+body[data-page=pokemon] section #container #desc_head #desc_head_content p {
+  font-size: 25px;
+}
+
+body[data-page=pokemon] section #container #content {
+  display: flex;
+  margin-left: 280px;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+body[data-page=pokemon] section #container #content h2 {
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+body[data-page=pokemon] section #go_back {
+  position: absolute;
+  left: 150px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body[data-page=pokemon] section #go_back a {
+  padding-bottom: 45px;
+}
+
+body[data-page=pokemon] section #go_back img {
+  width: 30px;
+  transform: rotate(180deg);
+  margin-top: -35px;
+  z-index: -1;
 }
 
 body[data-page=items] section {
@@ -272,5 +423,109 @@ body[data-page=items] section #buttons .button {
   padding: 20px 50px;
   border: 1.5px solid black;
   border-radius: 30px;
+}
+
+body[data-page=create_pokemon] section {
+  padding-top: 100px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+body[data-page=create_pokemon] section#create_custom_pokemon h1 {
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+body[data-page=create_pokemon] section#create_custom_pokemon form {
+  margin-left: 50px;
+}
+
+body[data-page=create_pokemon] section#create_custom_pokemon form div {
+  margin-bottom: 20px;
+}
+
+body[data-page=create_pokemon] section#create_custom_pokemon form div input {
+  border: none;
+  font-family: "Oxanium", cursive;
+}
+
+body[data-page=create_pokemon] section#create_custom_pokemon form div input[type=text] {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 100px;
+  margin-right: 50px;
+  padding: 10px 20px;
+  outline: none;
+  height: 25px;
+}
+
+body[data-page=create_pokemon] section#create_custom_pokemon form input[type=submit] {
+  width: 125px;
+  border: 1px solid black;
+  font-family: "Oxanium", cursive;
+  background-color: white;
+  outline: none;
+  padding: 10px 0;
+  font-size: 18px;
+  margin-top: 20px;
+  margin-left: 50%;
+  transform: translateX(-75%);
+  cursor: pointer;
+}
+
+body[data-page=create_pokemon] section#custom_pokemons_container {
+  padding-bottom: 100px;
+  margin-bottom: 100px;
+}
+
+body[data-page=create_pokemon] section#custom_pokemons_container h2 {
+  font-size: 25px;
+}
+
+body[data-page=create_pokemon] section#custom_pokemons_container > div {
+  display: flex;
+  margin-left: 50px;
+  align-items: center;
+  border-top: 1px solid black;
+}
+
+body[data-page=create_pokemon] section#custom_pokemons_container > div:first-of-type {
+  border: none;
+}
+
+body[data-page=create_pokemon] section#custom_pokemons_container > div > p {
+  width: 10%;
+  padding: 20px 0;
+  padding-left: 10px;
+}
+
+body[data-page=create_pokemon] section#custom_pokemons_container > div > img {
+  width: 10%;
+  padding-left: 10px;
+}
+
+body[data-page=create_pokemon] section#custom_pokemons_container #the_pokemon_header {
+  margin-top: 50px;
+}
+
+body[data-page=create_pokemon] section#custom_pokemons_container #go_back {
+  position: absolute;
+  left: 100px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+}
+
+body[data-page=create_pokemon] section#custom_pokemons_container #go_back a {
+  padding-bottom: 45px;
+}
+
+body[data-page=create_pokemon] section#custom_pokemons_container #go_back img {
+  width: 30px;
+  transform: rotate(180deg);
+  margin-top: -35px;
+  z-index: -1;
 }
 

@@ -21,19 +21,7 @@ Route::get('/items/page/{id}', 'ItemsController@items');
 
 Route::get('/item/{item}', 'ItemController@item');
 
+//Create Pokemons
+Route::get('/create-pokemon', 'Create_pokemonController@index')->name('create_pokemon');
 
-
-
-
-
-
-
-Route::get('/cars', 'CarsController@index')->name('cars');
-
-Route::get('/cars-update', 'CarsController@update')->name('cars-update');
-
-Route::get('/cars-delete', 'CarsController@delete')->name('cars-delete');
-
-Route::get('/cars-insert', 'CarsController@insert')->name('cars-insert');
-
-Route::post('/cars-send', 'CarsController@send')->name('cars-send');
+Route::post('/pokemons-send', 'Create_pokemonController@send')->name('pokemons-send');

@@ -15,6 +15,12 @@
     </head>
     <body data-page="items">
         <section>
+            <div id="go_back">
+                <a href="../../../">Home</a>
+                <img src="{{ asset('img/arrow_back.svg') }}" alt="">
+            </div>
+
+            <h1>List of all items</h1>         
             <div id="item_list">
                 @foreach ($item_list as $item)
                     <a href="/item/{{ $item['name'] }}"><div class="item_content">

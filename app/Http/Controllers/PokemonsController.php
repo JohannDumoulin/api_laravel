@@ -17,7 +17,6 @@ class PokemonsController extends Controller
 
         $offset = ($id*$per_page)-$per_page;
 
-
     	curl_setopt_array($curl, array(
     	  CURLOPT_URL => "https://pokeapi.co/api/v2/pokemon/?limit=".$per_page."&offset=".$offset,
     	  CURLOPT_RETURNTRANSFER => true,

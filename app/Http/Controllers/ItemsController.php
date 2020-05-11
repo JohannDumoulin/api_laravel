@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 class ItemsController extends Controller
 {
     public function items($id) {
+
     	$curl = curl_init();
 
     	curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
     	curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
-    	$per_page = 9;
+    	$per_page = 12;
 
         $offset = ($id*$per_page)-$per_page;
 
@@ -25,7 +26,6 @@ class ItemsController extends Controller
     	  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     	  CURLOPT_CUSTOMREQUEST => "GET",
     	  CURLOPT_POSTFIELDS => "",
-    	  CURLOPT_COOKIE => "__cfduid=dd442dafcd38909abb97f300a6caa67bf1583479956",
     	));
 
     	$response = curl_exec($curl);
@@ -40,8 +40,8 @@ class ItemsController extends Controller
     	}
 
     	$response = json_decode($response);
-    	$prev_page = $response->previous;
-        $next_page = $response->next;
+    	$prev_page = route('ItemsRoute', ['id' => $id - 1]);
+        $next_page = route('ItemsRoute', ['id' => $id + 1]);
     	$items_request = $response->results;
 
     	$item_list = [[]];
@@ -61,7 +61,6 @@ class ItemsController extends Controller
     			  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     			  CURLOPT_CUSTOMREQUEST => "GET",
     			  CURLOPT_POSTFIELDS => "",
-    			  CURLOPT_COOKIE => "__cfduid=dd442dafcd38909abb97f300a6caa67bf1583479956",
     			));
 
     			$response = curl_exec($curl);

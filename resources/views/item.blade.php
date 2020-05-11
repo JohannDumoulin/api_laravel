@@ -15,7 +15,12 @@
     </head>
     <body data-page="item">
         <section>
-            <p>Item</p>
+            <h1>This page is currently under development :)</h1>
+
+            <div id="go_back">
+                <a href="{{ url()->previous() }}">Return</a>
+                <img src="{{ asset('img/arrow_back.svg') }}" alt="">
+            </div>
         </section>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

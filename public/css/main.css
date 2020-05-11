@@ -341,20 +341,57 @@ body[data-page=pokemon] section #go_back img {
 
 body[data-page=items] section {
   padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body[data-page=items] section #go_back {
+  position: absolute;
+  left: 150px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+}
+
+body[data-page=items] section #go_back a {
+  padding-bottom: 45px;
+}
+
+body[data-page=items] section #go_back img {
+  width: 30px;
+  transform: rotate(180deg);
+  margin-top: -35px;
+  z-index: -1;
+}
+
+body[data-page=items] section h1 {
+  font-size: 40px;
+  margin-bottom: 50px;
 }
 
 body[data-page=items] section #item_list {
   width: 900px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 auto;
+  justify-content: center;
+  margin: 50px auto 0 auto;
 }
 
-body[data-page=items] section #item_list .item_content {
-  width: 250px;
-  height: 250px;
-  border: 2px solid black;
+body[data-page=items] section #item_list > a {
+  margin-right: 100px;
+}
+
+body[data-page=items] section #item_list > a:nth-child(3n+3) {
+  margin-right: 0px;
+}
+
+body[data-page=items] section #item_list > a .item_content {
+  width: 150px;
+  height: 150px;
+  border: 1.5px solid black;
   margin-bottom: 40px;
   cursor: pointer;
   border-radius: 30px;
@@ -364,11 +401,11 @@ body[data-page=items] section #item_list .item_content {
   align-items: center;
 }
 
-body[data-page=items] section #item_list .item_content img {
-  width: 80%;
+body[data-page=items] section #item_list > a .item_content img {
+  width: 50%;
 }
 
-body[data-page=items] section #item_list .item_content p {
+body[data-page=items] section #item_list > a .item_content p {
   text-align: center;
   font-size: 18px;
 }
@@ -385,6 +422,36 @@ body[data-page=items] section #buttons .button {
   padding: 20px 50px;
   border: 1.5px solid black;
   border-radius: 30px;
+}
+
+body[data-page=item] section {
+  height: 80vh;
+}
+
+body[data-page=item] section h1 {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 25px;
+}
+
+body[data-page=item] section #go_back {
+  position: absolute;
+  left: 150px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body[data-page=item] section #go_back a {
+  padding-bottom: 45px;
+}
+
+body[data-page=item] section #go_back img {
+  width: 30px;
+  transform: rotate(180deg);
+  margin-top: -35px;
+  z-index: -1;
 }
 
 body[data-page=create_pokemon] section {

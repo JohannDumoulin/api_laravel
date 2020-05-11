@@ -17,7 +17,7 @@ Route::get('/pokemons/page/{id}', 'PokemonsController@pokemons')->name('Pokemons
 
 Route::get('/pokemon/{pokemon}', 'PokemonController@pokemon');
 
-Route::get('/items/page/{id}', 'ItemsController@items');
+Route::get('/items/page/{id}', 'ItemsController@items')->name('ItemsRoute');
 
 Route::get('/item/{item}', 'ItemController@item');
 

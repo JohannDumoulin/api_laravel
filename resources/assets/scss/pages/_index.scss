@@ -1,3 +1,50 @@
 body[data-page="index"] {
-	
+	section {
+		padding: 100px 0;
+
+		h1 {
+			font-size: 70px;
+			text-align: center;
+		}
+
+		#container {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			margin-top: 75px;
+
+			.content {
+				font-size: 25px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				height: 200px;
+				color: white;
+				text-align: center;
+				width: 50%;
+				margin: 0 auto;
+				margin-bottom: 50px;
+				background-size: cover;
+
+				&#pokemons {
+					background-image: url('/img/pokemons.jpg');
+				}
+
+				&#items {
+					background-image: url('/img/items.jpg');
+				}
+
+				&#create {
+					background-image: url('/img/create.jpg');
+				}
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+
+				&:hover {
+				}
+			}
+		}
+	}
 }

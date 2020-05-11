@@ -10,9 +10,11 @@ class Create_pokemonController extends Controller
 	public function send(Request $request) {
 		$pokemon = new Pokemon;
 		$pokemon->name = $request->input('name');
-		//image
+		
+		$file = $request->file('img')->storeAs('/public', $request->input('name'));
+		$pokemon->img = asset("storage/".$request->input('name'));
+
 		$pokemon->height = $request->input('height');
-		$pokemon->img = $request->input('img');
 		$pokemon->weight = $request->input('weight');
 		$pokemon->types = $request->input('types');
 		$pokemon->abilities = $request->input('abilities');

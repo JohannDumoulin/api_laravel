@@ -16,7 +16,7 @@
     <body data-page="create_pokemon">
         <section id="create_custom_pokemon">
             <h1>Create your pokemon :</h1>
-            <form action="{{ route('pokemons-send') }}" method="post">
+            <form action="{{ route('pokemons-send') }}" method="post" name="form" enctype="multipart/form-data">
                  @csrf
                 <div id="general_specs">
                     <input type="text" name="name" placeholder="Name">
@@ -44,33 +44,33 @@
         <section id="custom_pokemons_container">
             <h2>Latest Pokemons create :</h2>
             <div id="the_pokemon_header">
-                <p>Name</p>
-                <p>Picture</p>
-                <p>Height</p>
-                <p>Weight</p>
-                <p>Type(s)</p>
-                <p>Ability(ies)</p>
-                <p>Speed</p>
-                <p>Special-defense</p>
-                <p>Special-Attack</p>
-                <p>Defense</p>
-                <p>Attack</p>
-                <p>Hp</p>
+                <div><p>Name</p></div>
+                <div><p>Picture</p></div>
+                <div><p>Height</p></div>
+                <div><p>Weight</p></div>
+                <div><p>Type(s)</p></div>
+                <div><p>Ability(ies)</p></div>
+                <div><p>Speed</p></div>
+                <div><p>Special-defense</p></div>
+                <div><p>Special-Attack</p></div>
+                <div><p>Defense</p></div>
+                <div><p>Attack</p></div>
+                <div><p>Hp</p></div>
             </div>
             @foreach($custom_pokemons as $pokemon)
                 <div class="the_pokemon">
-                    <p>{{ $pokemon->name }}</p>
-                    <img src="{{ $pokemon->img }}" alt="">
-                    <p>{{ $pokemon->height }} m</p>
-                    <p>{{ $pokemon->weight }} kg</p>
-                    <p>{{ $pokemon->types }}</p>
-                    <p>{{ $pokemon->abilities }}</p>
-                    <p>{{ $pokemon->speed }}</p>
-                    <p>{{ $pokemon->special_defense }}</p>
-                    <p>{{ $pokemon->special_attack }}</p>
-                    <p>{{ $pokemon->defense }}</p>
-                    <p>{{ $pokemon->attack }}</p>
-                    <p>{{ $pokemon->hp }}</p>
+                    <div><p>{{ $pokemon->name }}</p></div>
+                    <div><img src="{{ $pokemon->img }}" alt=""></div>
+                    <div><p>{{ $pokemon->height }} m</p></div>
+                    <div><p>{{ $pokemon->weight }} kg</p></div>
+                    <div><p>{{ $pokemon->types }}</p></div>
+                    <div><p>{{ $pokemon->abilities }}</p></div>
+                    <div><p>{{ $pokemon->speed }}</p></div>
+                    <div><p>{{ $pokemon->special_defense }}</p></div>
+                    <div><p>{{ $pokemon->special_attack }}</p></div>
+                    <div><p>{{ $pokemon->defense }}</p></div>
+                    <div><p>{{ $pokemon->attack }}</p></div>
+                    <div><p>{{ $pokemon->hp }}</p></div>
                 </div>
             @endforeach
 

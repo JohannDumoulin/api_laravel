@@ -31,45 +31,6 @@ body[data-page="pokemons"] {
 			margin-bottom: 50px;
 		}
 
-		form {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-
-			p {
-				font-size: 25px;
-				margin-bottom: 20px;
-			}
-
-			input {
-				border: none;
-				font-family: $font-oxanium;
-
-				&[type="search"] {
-					border-top: 1px solid black;
-					border-bottom: 1px solid black;
-					width: 200px;
-					padding: 20px 20px;
-					outline: none;
-					height: 25px;
-					font-size: 20px;
-				}
-
-				&[type="submit"] {
-					margin: 25px 0;
-
-					width: 125px;
-					border: 1px solid black;
-					font-family: $font-oxanium;
-					background-color: white;
-					outline: none;
-					padding: 10px 0;
-					font-size: 18px;
-					cursor: pointer;
-				}
-			}
-		}
-
 		#pokemon_list {
 			width: 900px;
 			display: flex;

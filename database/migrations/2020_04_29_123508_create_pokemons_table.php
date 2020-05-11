@@ -16,7 +16,7 @@ class CreatePokemonsTable extends Migration
         Schema::create('pokemons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->binary('img');
+            $table->string('img');
             $table->decimal('height');
             $table->integer('weight');
             $table->string('types');

@@ -65,15 +65,18 @@ body[data-page="create_pokemon"] {
 					border: none;
 				}
 
-				>p {
+				>div {
 					width: 10%;
-					padding: 20px 0;
-					padding-left: 10px;
-				}
 
-				>img {
-					width: 10%;
-					padding-left: 10px;
+					p {
+						padding: 20px 0;
+						padding-left: 10px;
+					}
+
+					img {
+						padding-left: 10px;
+						width: 80%;
+					}
 				}
 			}
 
@@ -82,7 +85,7 @@ body[data-page="create_pokemon"] {
 			}
 
 			.the_pokemon {
-
+				padding-top: 25px;
 			}
 
 			#go_back {
